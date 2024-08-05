@@ -10,10 +10,10 @@ class BillCalc:
             float(check)
         except:
             print("invalid input. Please enter a dollar amount X.XX")
-            self.get_check(self) 
+            check = self.get_check()
         check = round(float(check), 2)
         return check
-
+    
     def get_tip(self,check):
         tip = round((check * self.TIP_PERCENTAGE),2)
         return tip 
@@ -28,9 +28,6 @@ if __name__ == "__main__":
     check = bc.get_check()
     tip = bc.get_tip(check)
     tax = bc.get_tax(check)
-    #check = get_check()
-    #tip = get_tip(TIP_PERCENTAGE, check)
-    #tax = get_tax(TAX_PERCENTAGE, check)
     total = round(check + tip + tax,2)
     print("Check Total \n"
         f"Meal cost: ${check:.2f} \n"
